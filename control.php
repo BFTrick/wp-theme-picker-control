@@ -39,11 +39,20 @@ class Theme_Picker_Custom_Control extends WP_Customize_Control
 			<select <?php $this->link(); ?>>
 				<?php
 				foreach ( $this->choices as $value => $label )
-					echo '<option value="' . esc_attr( $value ) . '"' . selected( $this->value(), $value, false ) . '>' . $label . '</option>';
+				{
+					?>
+					<option value="<?php echo esc_attr( $value )?>" <?php echo selected( $this->value(), $value, false )?>><?php echo $label ?></option>
+					<?php
+				}
 				?>
 			</select>
 			<div class="fancyDisplay">
-				<?php // TODO ?>
+				<?php
+				foreach ( $this->choices as $value => $label )
+				{
+					// echo '<option value="' . esc_attr( $value ) . '"' . selected( $this->value(), $value, false ) . '>' . $label . '</option>';
+				}
+				?>
 			</div>
 		</div>
 		<?php
