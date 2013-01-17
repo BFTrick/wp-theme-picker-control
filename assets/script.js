@@ -39,11 +39,15 @@ jQuery(document).ready(function($)
 				// loop through properties
 				for(var propertyName in theme) 
 				{
+					// get property
 					property = theme[propertyName];
 
-					// for each property find an input and change the value
-					// TODO
-					$("#customize-control-"+propertyName).find("input[type='text']").val(property);
+					// find the appropriate section
+					section = $("#customize-control-"+propertyName);
+
+					// for each property find an input/select and change the value
+					// after changing the property fire off a change event to fire off the default WP jquery events
+					$("input, select", section).val(property).change();
 				}
 			});
 
