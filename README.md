@@ -10,7 +10,7 @@ An example would be a theme with two different color palettes: a blue theme and 
 
 1. Include & activate the plugin
 2. Open your functions.php file
-3. Save your favorite fonts in an array like so: 
+3. Save your themes in an array like so: 
 
 	``` php
 	$customThemes;
@@ -41,7 +41,7 @@ An example would be a theme with two different color palettes: a blue theme and 
 	}
 	``` 
 	* **title** - the title of the theme
-	* **appearane** - //TODO
+	* **appearane** - the appearance of the theme within the theme customizer. The implementation isn't complete so there aren't any docs yet.
 	* **settings** - the settings that this theme controls. The settings field contains an array with `keys` that are the control ids and `values` that that the value for that property. *Note* If you're digging through the source code, the control id looks like this `<li id="customize-control-FOO">`. WordPress automatically adds the `customize-control-` to the ID you specify in your functions file.
 
 ## Known Issues
