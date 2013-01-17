@@ -1,1 +1,14 @@
-style.css
+.themePickerControl .fancyDisplay
+{
+	
+}
+	.themePickerControl .fancyDisplay ul
+	{
+		list-style: none;
+	}
+		.themePickerControl .fancyDisplay ul li
+		{
+			border: 1px solid black;
+			list-style: none;
+			padding: .25em;
+		}

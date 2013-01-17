@@ -6,12 +6,14 @@
 jQuery(document).ready(function($) 
 {
 	// initialize the custom control for the theme picker
-	$(".themePickerControl").themePickerCustomControl();
+	$(".themePickerControl").themePickerCustomControl().themePickerFancyControl();
 });
 
 
 /**
  * A small jquery plugin that does all of the hard work
+ * This plugin watches the select box and when it is changed
+ * this plugin propagates the necessary changes to the other controls
 **/
 (function( $ ) 
 {
@@ -49,6 +51,42 @@ jQuery(document).ready(function($)
 					// after changing the property fire off a change event to fire off the default WP jquery events
 					$("input, select", section).val(property).change();
 				}
+			});
+
+		});
+
+	};
+})( jQuery );
+
+/**
+ * A small jquery plugin that does all of the hard work
+ * This plugin watches clicks in the fancy display and mirrors them in the actual select box
+**/
+(function( $ ) 
+{
+	$.fn.themePickerFancyControl = function() 
+	{
+
+		//return the 'this' selector to maintain jquery chainability
+		return this.each(function() 
+		{
+			// cache this selector for further use
+			thisThemePickerFancyControl = this;
+
+			// hide default select box
+			$("select", thisThemePickerFancyControl).css("display", "none");
+			
+			// add event listeners to the fancy display
+			$(".fancyDisplay ul li", thisThemePickerFancyControl).on("click", function(event){
+				// get index of clicked element
+				var index = $(".fancyDisplay ul li", thisThemePickerFancyControl).index(this);
+				
+				// unselect all options
+				$('select option', thisThemePickerFancyControl).removeAttr('selected');
+
+				// select new element
+				// simulate a change
+				$('select :nth-child('+(index+1)+')', thisThemePickerFancyControl).attr('selected', 'selected').change();
 			});
 
 		});

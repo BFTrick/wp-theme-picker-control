@@ -47,12 +47,16 @@ class Theme_Picker_Custom_Control extends WP_Customize_Control
 				?>
 			</select>
 			<div class="fancyDisplay">
-				<?php
-				foreach ( $this->choices as $value => $label )
-				{
-					// echo '<option value="' . esc_attr( $value ) . '"' . selected( $this->value(), $value, false ) . '>' . $label . '</option>';
-				}
-				?>
+				<ul>
+					<?php
+					foreach ( $this->choices as $value => $label )
+					{
+						?>
+						<li><?php echo $label;?></li>
+						<?php
+					}
+					?>
+				</ul>
 			</div>
 		</div>
 		<?php
