@@ -26,8 +26,9 @@ class Theme_Picker_Theme_Collection
 		{
 			$this->themes[] = new Theme_Picker_Theme(
 				$value["title"], 
-				$value["appearance"], 
-				$value["settings"]
+				$value["settings"],
+				$value["backgroundImage"],
+				$value["titleColor"]  
 			);
 		}
 	}
@@ -44,16 +45,16 @@ class Theme_Picker_Theme_Collection
 
 
 	/**
-	 * getThemeNameArray
+	 * getThemeArray
 	 * this function gets an array of theme names
 	 * for use with the $wp_customize->add_control 'choices' option 
 	**/
-	function getThemeNameArray()
+	function getThemeArray()
 	{
 		$result;
 		foreach ($this->themes as $key => $value) 
 		{
-			$result[$value->__get("title")] = $value->__get("title");
+			$result[$value->__get("title")] = array("title"=>$value->__get("title"), "backgroundImage"=>$value->__get("backgroundImage"), "titleColor"=>$value->__get("titleColor"));
 		}
 		return $result;
 	}

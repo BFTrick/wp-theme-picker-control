@@ -3,7 +3,7 @@
 Plugin Name: WP Theme Control
 Plugin URI: https://github.com/BFTrick/wp-theme-picker-control
 Description: This plugin creates a new control in the theme customizer to help users select groups of options
-Version: 0.2
+Version: 0.3
 Author: Patrick Rauland
 Author URI: http://www.patrickrauland.com
 

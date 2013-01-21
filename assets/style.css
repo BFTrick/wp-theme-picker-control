@@ -8,7 +8,16 @@
 	}
 		.themePickerControl .fancyDisplay ul li
 		{
-			border: 1px solid black;
+			border: 1px solid #666;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+			cursor: pointer;
+			font-size: 1.2em;
 			list-style: none;
-			padding: .25em;
+			margin-bottom: .8em;
+			padding: .5em;
 		}
+			.themePickerControl .fancyDisplay ul li:last-child
+			{
+				margin-bottom: 0;
+			}

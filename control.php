@@ -41,7 +41,7 @@ class Theme_Picker_Custom_Control extends WP_Customize_Control
 				foreach ( $this->choices as $value => $label )
 				{
 					?>
-					<option value="<?php echo esc_attr( $value )?>" <?php echo selected( $this->value(), $value, false )?>><?php echo $label ?></option>
+					<option value="<?php echo esc_attr( $value )?>" <?php echo selected( $this->value(), $value, false )?>><?php echo $label['title'] ?></option>
 					<?php
 				}
 				?>
@@ -52,7 +52,7 @@ class Theme_Picker_Custom_Control extends WP_Customize_Control
 					foreach ( $this->choices as $value => $label )
 					{
 						?>
-						<li><?php echo $label;?></li>
+						<li style="color: <?=$label['titleColor']?>; background-image: url(<?=$label['backgroundImage'];?>);"><?php echo $label['title'];?></li>
 						<?php
 					}
 					?>

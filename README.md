@@ -20,20 +20,16 @@ An example would be a theme with two different color palettes: a blue theme and 
 	{
 		// assemble data for themes
 		$themes[] = array(
-			"title" => "Theme Number One", 
-			"appearance" => array(
-					array("percentage" => 60, "color" => "#efefef"),
-					array("percentage" => 20, "color" => "#ffffff"),
-					array("percentage" => 10, "color" => "#4d4d4d"),
-					array("percentage" => 10, "color" => "#ff3333")
-				), 
+			"title" => "Theme Number One",  
 			"settings" => array(
 					"background_color_control" 			=> "#efefef", 
 					"content_background_color_control" 	=> "#ffffff",
 					"text_color_control" 				=> "#4d4d4d",
 					"active_text_color_control" 		=> "#ff3333",
 					"font_family_control"				=> "Arial"
-				), 
+				),
+			"backgroundImage" => "http://example.com/foo.png", 
+			"titleColor" => "#ffffff",  
 		);
 		
 		// create new theme collection
@@ -41,16 +37,29 @@ An example would be a theme with two different color palettes: a blue theme and 
 	}
 	``` 
 	* **title** - the title of the theme
-	* **appearane** - the appearance of the theme within the theme customizer. The implementation isn't complete so there aren't any docs yet.
 	* **settings** - the settings that this theme controls. The settings field contains an array with `keys` that are the control ids and `values` that that the value for that property. *Note* If you're digging through the source code, the control id looks like this `<li id="customize-control-FOO">`. WordPress automatically adds the `customize-control-` to the ID you specify in your functions file.
+	* **backgroundImage** - the background image that gives users an idea of what the theme looks like before selecting it. I make my images `259px` wide by `36px` tall but you can play with the CSS to make them anysize.
+	* **titleColor** - the color of the title text on top of the background image.
+
+## Screenshots
+
+Here is what the theme picker looks like with 6 different themes.
+
+![theme-picker](http://img.photobucket.com/albums/v357/BFTrick/Web/theme-picker_zps0723ff9a.png)
 
 ## Known Issues
 
 * Can only have one instance of a theme picker
-* Requires JavaScript
+* Requires JavaScript & jQuery
 * Settings should use `postMessage` for `transport` or there may be issues with AJAX (untested)
 
 ## Version
+
+### 0.3
+
+* adding theme background images
+* adding title color
+* spicing up the theme picker itself
 
 ### 0.2
 

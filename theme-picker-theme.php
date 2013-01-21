@@ -5,21 +5,21 @@
 class Theme_Picker_Theme
 {
 	private $title;				// the name of the theme
-	private $appearance;		// an array containing data to display the theme
-								// 	format:
-								// 	arbitrary index => array(percentage => XX%, color => #XXXXXX)
 	private $settings;			// an array of settings to be changed when this theme is selected
 								// 	format:
 								// 	id => value
+	private $backgroundImage;	// location of the background image
+	private $titleColor;		// the color of the title text on top of the background image
 
 	/**
 	 * Constructor
 	**/
-	public function __construct($title, $appearance, $settings)
+	public function __construct($title, $settings, $backgroundImage, $titleColor)
 	{
 		$this->title = $title;
-		$this->appearance = $appearance;
 		$this->settings = $settings;
+		$this->backgroundImage = $backgroundImage;
+		$this->titleColor = $titleColor;
 	}
 
 	/**
